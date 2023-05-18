@@ -82,7 +82,18 @@ function obtenerPrecioProducto(cantidad) {
     let precio = helado.precio;
     calcularPrecioTotal(cantidad, precio);
     agregarAlCarrito(productos.indexOf(helado));
-    filtrarHelados(3); // Ejemplo de uso de la función filtrarHelados
+    filtrarHelados(3);
+
+    // Mostrar el resultado de buscarHelado en la consola
+    console.log("Resultado de buscarHelado:", helado);
+
+    // Mostrar el resultado de filtrarHelados en un prompt
+    let heladosFiltrados = filtrarHelados(3);
+    let mensaje = "Helados con precio menor a 3:\n";
+    heladosFiltrados.forEach(function (helado) {
+      mensaje += `- ${helado.nombre} (Precio: ${helado.precio})\n`;
+    });
+    alert(mensaje);
   } else {
     console.log("No se encontró el helado en la lista de productos.");
   }
